@@ -31,3 +31,13 @@ main {
 header h1 {
   text-align: center;
 }
+
+.character-list {
+  /*  */
+}
+
+.characterCardsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

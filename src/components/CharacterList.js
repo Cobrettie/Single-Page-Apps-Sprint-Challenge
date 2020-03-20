@@ -21,10 +21,11 @@ export default function CharacterList() {
   return (
     <section className="character-list">
       <h2>TODO: `array.map()` over your state here!</h2>
-      {listOfCharacters.map((character, key) => (
-        console.log(character),
-        <CharacterCard character={character} />
-      ))}
+      <div className='characterCardsContainer'>
+        {listOfCharacters.map(character => (
+          <CharacterCard character={character} key={character.id} />
+        ))}
+      </div>
     </section>
   );
 }
