@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 
-import SearchForm from "./SearchForm";
+import SearchForm from "../SearchForm";
 import CharacterCard from './CharacterCard';
 
 export default function CharacterList() {

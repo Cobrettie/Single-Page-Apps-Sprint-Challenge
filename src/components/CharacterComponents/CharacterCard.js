@@ -7,6 +7,9 @@ const SingleCard = styled.div`
   width: 30%;
   margin: 20px;
 
+  &&h2 {
+    text-align: center;
+  }
 `;
 
 export default function CharacterCard({ character }) {

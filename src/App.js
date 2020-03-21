@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 import NavMenu from './components/NavMenu.js';
 import Header from "./components/Header.js";
 import WelcomePage from './components/WelcomePage.js';
-import CharacterList from "./components/CharacterList.js";
+import CharacterList from "./components/CharacterComponents/CharacterList";
 
 export default function App() {
   return (
