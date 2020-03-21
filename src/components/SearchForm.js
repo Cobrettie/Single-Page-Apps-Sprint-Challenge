@@ -19,7 +19,6 @@ export default function SearchForm({ listOfCharacters }) {
 
   return (
     <section className="search-form">
-     // Add a search form here
       <form>
         <input
           type='text'
@@ -29,6 +28,16 @@ export default function SearchForm({ listOfCharacters }) {
           placeholder='Search by name'
         />
       </form>
+      <div>
+        {filteredList.map(character => {
+          return (
+            <div key={character.id}>
+              <h2>{character.name}</h2>
+            </div>
+          )
+        }  
+        )}
+      </div>
     </section>
   );
 }
