@@ -13,6 +13,7 @@ export default function CharacterList() {
     axios
       .get('https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/character/')
       .then(response => {
+        console.log(response)
         const allCharacters = response.data.results;
         setListOfCharacters(allCharacters)
       })
@@ -20,7 +21,7 @@ export default function CharacterList() {
 
   return (
     <section className="character-list">
-      <h2>TODO: `array.map()` over your state here!</h2>
+      <h2>Character List</h2>
       <div className='characterCardsContainer'>
         {listOfCharacters.map(character => (
           <CharacterCard character={character} key={character.id} />
