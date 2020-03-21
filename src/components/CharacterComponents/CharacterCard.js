@@ -1,16 +1,5 @@
 import React from "react";
-import styled from 'styled-components';
-
-const SingleCard = styled.div`
-  border: 1px solid #373737;
-  border-radius: 5px;
-  width: 30%;
-  margin: 20px;
-
-  &&h2 {
-    text-align: center;
-  }
-`;
+import { SingleCard } from './CharacterStyles';
 
 export default function CharacterCard({ character }) {
   const { id, name, image, status, species, type, gender } = character;
