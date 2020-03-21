@@ -4,6 +4,8 @@ import axios from 'axios';
 import SearchForm from "../SearchForm";
 import CharacterCard from './CharacterCard';
 
+import { CharacterCardsContainer } from "./CharacterStyles";
+
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
   const [listOfCharacters, setListOfCharacters] = useState([]);
@@ -24,11 +26,11 @@ export default function CharacterList() {
     <section className="character-list">
       <h2>Character List</h2>
       <SearchForm listOfCharacters={listOfCharacters} />
-      <div className='characterCardsContainer'>
+      <CharacterCardsContainer>
         {listOfCharacters.map(character => (
           <CharacterCard character={character} key={character.id} />
         ))}
-      </div>
+      </CharacterCardsContainer>
     </section>
   );
 }

@@ -46,17 +46,3 @@ header h1 {
   border-radius: 5px;
 }
 
-
-
-/* Character Components */
-
-.character-list {
-  /*  */
-}
-
-.characterCardsContainer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}

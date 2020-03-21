@@ -1,13 +1,15 @@
 import React from "react";
-import { SingleCard } from './CharacterStyles';
+import { SingleCard, SingleCardImg, ImgContainer } from './CharacterStyles';
 
 export default function CharacterCard({ character }) {
   const { id, name, image, status, species, type, gender } = character;
   // console.log(character);
   return (
     <SingleCard>
-      <h2>Name: {name}</h2>
-      <img src={image}></img>
+      <h2>{name}</h2>
+      <ImgContainer>
+        <SingleCardImg src={image}></SingleCardImg>
+      </ImgContainer>
       <p>Status: {status}</p>
       <p>Species: {species}</p>
       <p>Type: {type}</p>

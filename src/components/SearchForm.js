@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import CharacterCard from './CharacterComponents/CharacterCard';
+import { CharacterCardsContainer } from './CharacterComponents/CharacterStyles';
 
 export default function SearchForm({ listOfCharacters }) {
   const [filteredList, setFilteredList] = useState([]);
@@ -28,16 +30,14 @@ export default function SearchForm({ listOfCharacters }) {
           placeholder='Search by name'
         />
       </form>
-      <div>
+      <CharacterCardsContainer>
         {filteredList.map(character => {
           return (
-            <div key={character.id}>
-              <h2>{character.name}</h2>
-            </div>
+            <CharacterCard character={character} key={character.id} />
           )
         }  
         )}
-      </div>
+      </CharacterCardsContainer>
     </section>
   );
 }
