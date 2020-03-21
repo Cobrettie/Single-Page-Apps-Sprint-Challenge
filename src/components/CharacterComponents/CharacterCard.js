@@ -12,7 +12,7 @@ export default function CharacterCard({ character }) {
       </ImgContainer>
       <p>Status: {status}</p>
       <p>Species: {species}</p>
-      <p>Type: {type}</p>
+      {type === '' ? <p>Type: No type available</p> : <p>Type: {type}</p>}
       <p>Gender: {gender}</p>
     </SingleCard>
   );
