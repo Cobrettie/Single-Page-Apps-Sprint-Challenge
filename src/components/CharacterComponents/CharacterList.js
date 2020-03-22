@@ -24,7 +24,6 @@ export default function CharacterList() {
 
   return (
     <section className="character-list">
-      <h2>Character List</h2>
       <SearchForm listOfCharacters={listOfCharacters} />
       <CharacterCardsContainer>
         {listOfCharacters.map(character => (
