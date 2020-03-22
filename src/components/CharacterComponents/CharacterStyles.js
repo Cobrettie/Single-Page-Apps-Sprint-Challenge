@@ -6,7 +6,7 @@ import styled from 'styled-components';
 export const SingleCard = styled.div`
   border: 1px solid #373737;
   border-radius: 5px;
-  width: 30%;
+  width: 20%;
   margin: 20px;
   padding: 10px 20px;
 `;
@@ -17,6 +17,7 @@ export const ImgContainer = styled.div`
 
 export const SingleCardImg = styled.img`
   border-radius: 5px;
+  width: 100%;
 `;
 
 // CharacterList component styling
