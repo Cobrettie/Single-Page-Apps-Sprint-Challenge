@@ -12,6 +12,7 @@ const StyledNavLink = styled(NavLink)`
   text-decoration: none;
   color: dodgerblue;
   padding: 0 20px;
+  font-size: 20px;
 `;
 
 export default function NavMenu() {

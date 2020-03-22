@@ -16,5 +16,6 @@ export const StyledInput = styled.input`
   padding: 10px 20px;
   text-align: center;
   font-size: 20px;
-  border-radius: 100px;
+  border: 2px solid #373737;
+  border-radius: 5px;
 `;
