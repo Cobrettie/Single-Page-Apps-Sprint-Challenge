@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import CharacterCard from './CharacterComponents/CharacterCard';
-import { CharacterCardsContainer } from './CharacterComponents/CharacterStyles';
+import CharacterCard from '../CharacterComponents/CharacterCard';
+import { CharacterCardsContainer } from '../CharacterComponents/CharacterStyles';
 
 export default function SearchForm({ listOfCharacters }) {
   const [filteredList, setFilteredList] = useState([]);
