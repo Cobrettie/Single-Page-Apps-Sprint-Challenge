@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import CharacterCard from '../CharacterComponents/CharacterCard';
 import { CharacterCardsContainer } from '../CharacterComponents/CharacterStyles';
 
+import { SearchFormSection, StyledForm, StyledInput } from './SearchFormStyles';
+
 export default function SearchForm({ listOfCharacters }) {
   const [filteredList, setFilteredList] = useState([]);
   const [query, setQuery] = useState('');
@@ -20,16 +22,16 @@ export default function SearchForm({ listOfCharacters }) {
   }
 
   return (
-    <section className="search-form">
-      <form>
-        <input
+    <SearchFormSection>
+      <StyledForm>
+        <StyledInput
           type='text'
           onChange={handleInputChange}
           value={query}
           name='name'
           placeholder='Search by name'
         />
-      </form>
+      </StyledForm>
       <CharacterCardsContainer>
         {filteredList.map(character => {
           return (
@@ -38,6 +40,6 @@ export default function SearchForm({ listOfCharacters }) {
         }  
         )}
       </CharacterCardsContainer>
-    </section>
+    </SearchFormSection>
   );
 }
