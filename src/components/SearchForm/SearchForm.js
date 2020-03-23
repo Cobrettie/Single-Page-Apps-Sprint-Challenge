@@ -5,11 +5,11 @@ import { CharacterCardsContainer } from '../CharacterComponents/CharacterStyles'
 import { SearchFormSection, StyledForm, StyledInput } from './SearchFormStyles';
 
 export default function SearchForm({ listOfCharacters }) {
-  console.log(listOfCharacters)
+  // console.log(listOfCharacters)
   const [filteredList, setFilteredList] = useState([]);
   const [query, setQuery] = useState('');
 
-  console.log('listOfChars', filteredList)
+  // console.log('listOfChars', filteredList)
 
   useEffect(() => {
     const filteredCharacters = listOfCharacters.filter(character => 
