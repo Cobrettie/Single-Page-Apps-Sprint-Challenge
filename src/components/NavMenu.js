@@ -19,7 +19,7 @@ export default function NavMenu() {
   return (
     <StyledNav>
       <StyledNavLink to='/'>Home</StyledNavLink>
-      <StyledNavLink to='characterlist'>List of characters</StyledNavLink>
+      <StyledNavLink to='characterlist'>Characters</StyledNavLink>
     </StyledNav>
   )
 }
