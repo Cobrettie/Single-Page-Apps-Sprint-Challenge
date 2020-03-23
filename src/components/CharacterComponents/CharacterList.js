@@ -10,11 +10,15 @@ export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
   const [listOfCharacters, setListOfCharacters] = useState([]);
 
+  const charactersAPI = 'https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/character/';
+  const apiPagePrefix = '?page=';
+  const apiPageNumber = '1'
+
   useEffect(() => {
     // TODO: Add API Request here - must run in `useEffect`
     //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
     axios
-      .get('https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/character/')
+      .get(`${charactersAPI}${apiPagePrefix}${apiPageNumber}`)
       .then(response => {
         console.log(response)
         const allCharacters = response.data.results;
