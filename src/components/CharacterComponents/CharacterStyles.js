@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-// CharacterCard component styling
+// CharacterCard component 
 
 export const SingleCard = styled.div`
   border: 1px solid #373737;
@@ -19,11 +19,27 @@ export const SingleCardImg = styled.img`
   width: 100%;
 `;
 
-// CharacterList component styling
+// CharacterList component 
 
 export const CharacterCardsContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+`;
+
+// CharacterList component buttons
+
+export const ButtonContainer = styled.div`
+  margin: 40px auto 0px;
+  text-align: center;
+`;
+
+export const StyledButton = styled.button`
+  font-size: 16px;
+  background-color: dodgerblue;
+  color: #fafafa;
+  border: 1px solid #373737;
+  border-radius: 5px;
+  margin: 0 10px;
 `;
