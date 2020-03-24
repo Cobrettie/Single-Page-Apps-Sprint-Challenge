@@ -36,7 +36,7 @@ export const ButtonContainer = styled.div`
 `;
 
 export const StyledButton = styled.button`
-  font-size: 16px;
+  font-size: 14px;
   background-color: dodgerblue;
   color: #fafafa;
   border: 1px solid #373737;
