@@ -26,7 +26,7 @@ export default function CharacterList() {
     axios
       .get(`${charactersAPI}${apiPagePrefix}${apiPageNumber}`)
       .then(response => {
-        console.log(response)
+        // console.log(response)
         const allCharacters = response.data.results;
         setListOfCharacters(allCharacters)
         if (response.data.info.next === '') {

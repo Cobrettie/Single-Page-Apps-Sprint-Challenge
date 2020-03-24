@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 // CharacterCard component 
 
@@ -8,6 +9,11 @@ export const SingleCard = styled.div`
   width: 20%;
   margin: 20px;
   padding: 10px 20px;
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: #373737;
 `;
 
 export const ImgContainer = styled.div`

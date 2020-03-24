@@ -9,8 +9,6 @@ export default function SearchForm({ listOfCharacters }) {
   const [filteredList, setFilteredList] = useState([]);
   const [query, setQuery] = useState('');
 
-  // console.log('listOfChars', filteredList)
-
   useEffect(() => {
     const filteredCharacters = listOfCharacters.filter(character => 
       character.name.toLowerCase().includes(query.toLowerCase())
@@ -21,8 +19,6 @@ export default function SearchForm({ listOfCharacters }) {
   const handleInputChange = event => {
     setQuery(event.target.value)
   }
-
-  console.log(filteredList)
 
   return (
     <SearchFormSection>

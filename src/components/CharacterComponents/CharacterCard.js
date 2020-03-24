@@ -1,14 +1,13 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
 import CharacterPage from './CharacterPage';
-import { SingleCard, SingleCardImg, ImgContainer } from './CharacterStyles';
+import { SingleCard, StyledLink, SingleCardImg, ImgContainer } from './CharacterStyles';
 
 export default function CharacterCard({ character }) {
   const { id, name, image, status, species, type, gender } = character;
   // console.log(character);
   return (
     <SingleCard>
-      <Link to={`/character/${id}`}><h2>{name}</h2></Link>
+      <StyledLink to={`/character/${id}`}><h2>{name}</h2></StyledLink>
       <ImgContainer>
         <SingleCardImg src={image}></SingleCardImg>
       </ImgContainer>
