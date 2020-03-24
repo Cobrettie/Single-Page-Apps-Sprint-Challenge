@@ -7,12 +7,23 @@ import CharacterCard from './CharacterCard';
 import { CharacterCardsContainer } from "./CharacterStyles";
 
 export default function CharacterList() {
-  // TODO: Add useState to track data from useEffect
   const [listOfCharacters, setListOfCharacters] = useState([]);
+  const [apiPageNumber, setApiPageNumber] = useState(1);
 
   const charactersAPI = 'https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/character/';
   const apiPagePrefix = '?page=';
-  const apiPageNumber = '1'
+
+  const incrementApiPageNumber = () => {
+    return (
+      setApiPageNumber(apiPageNumber + 1)
+    )
+  }
+
+  const decrementApiPageNumber = () => {
+    return (
+      setApiPageNumber(apiPageNumber - 1)
+    )
+  }
 
   useEffect(() => {
     // TODO: Add API Request here - must run in `useEffect`
@@ -24,11 +35,13 @@ export default function CharacterList() {
         const allCharacters = response.data.results;
         setListOfCharacters(allCharacters)
       })
-  }, []);
+  }, [apiPageNumber]);
 
   return (
     <div>
       <SearchForm listOfCharacters={listOfCharacters} />
+      <button onClick={() => decrementApiPageNumber()}>Previous Page</button>
+      <button onClick={() => incrementApiPageNumber()}>Next Page</button>
       <section className="character-list">
         <CharacterCardsContainer>
           {listOfCharacters.map(character => (
