@@ -47,13 +47,6 @@ export default function CharacterList() {
         <StyledButton onClick={() => incrementApiPageNumber()}>Next Page</StyledButton>
       </ButtonContainer>
       <SearchForm listOfCharacters={listOfCharacters} />
-      <section className="character-list">
-        <CharacterCardsContainer>
-          {listOfCharacters.map(character => (
-            <CharacterCard character={character} key={character.id} />
-          ))}
-        </CharacterCardsContainer>
-      </section>
       <ButtonContainer>
         <StyledButton onClick={() => decrementApiPageNumber()}>Previous Page</StyledButton>
         <StyledButton onClick={() => incrementApiPageNumber()}>Next Page</StyledButton>

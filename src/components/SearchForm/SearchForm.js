@@ -22,6 +22,8 @@ export default function SearchForm({ listOfCharacters }) {
     setQuery(event.target.value)
   }
 
+  console.log(filteredList)
+
   return (
     <SearchFormSection>
       <StyledForm>
@@ -33,6 +35,17 @@ export default function SearchForm({ listOfCharacters }) {
           placeholder='Search by name'
         />
       </StyledForm>
+
+      {filteredList.length === 0 ? 
+      <section className="character-list">
+        <CharacterCardsContainer>
+          {listOfCharacters.map(character => (
+            <CharacterCard character={character} key={character.id} />
+          ))}
+        </CharacterCardsContainer>
+      </section> 
+      : null}
+
       <CharacterCardsContainer>
         {filteredList.map(character => {
           return (
