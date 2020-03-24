@@ -8,7 +8,7 @@ export const SearchFormSection = styled.section`
 export const StyledForm = styled.form`
   // width: 40%;
   margin: 0 auto;
-
+  padding: 0 0 30px 0;
 `;
 
 export const StyledInput = styled.input`
