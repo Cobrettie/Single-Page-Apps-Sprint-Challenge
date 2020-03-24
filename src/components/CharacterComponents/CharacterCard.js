@@ -16,11 +16,6 @@ export default function CharacterCard({ character }) {
       <p>Species: {species}</p>
       {type === '' ? <p>Type: No type available</p> : <p>Type: {type}</p>}
       <p>Gender: {gender}</p>
-
-      <Route
-        path={`/character/${id}`}
-        render={(character) => <CharacterPage {...character} /> }
-      />
     </SingleCard>
   );
 }
