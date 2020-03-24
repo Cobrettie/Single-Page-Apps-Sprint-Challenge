@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import SearchForm from "../SearchForm/SearchForm";
-import CharacterCard from './CharacterCard';
-import { CharacterCardsContainer, ButtonContainer, StyledButton } from "./CharacterStyles";
+import { ButtonContainer, StyledButton } from "./CharacterStyles";
 
 const charactersAPI = 'https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/character/';
 const apiPagePrefix = '?page=';
