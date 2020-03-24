@@ -54,6 +54,10 @@ export default function CharacterList() {
           ))}
         </CharacterCardsContainer>
       </section>
+      <ButtonContainer>
+        <StyledButton onClick={() => decrementApiPageNumber()}>Previous Page</StyledButton>
+        <StyledButton onClick={() => incrementApiPageNumber()}>Next Page</StyledButton>
+      </ButtonContainer>
     </div>
   );
 }
