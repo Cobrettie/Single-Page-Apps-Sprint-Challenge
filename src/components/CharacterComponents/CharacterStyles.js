@@ -11,11 +11,6 @@ export const SingleCard = styled.div`
   padding: 10px 20px;
 `;
 
-export const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: #373737;
-`;
-
 export const ImgContainer = styled.div`
   text-align: center;
 `;
