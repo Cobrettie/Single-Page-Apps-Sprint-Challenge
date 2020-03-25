@@ -1,19 +1,34 @@
 import React, { useState, useEffect } from "react";
+import axios from 'axios';
 import CharacterCard from '../CharacterComponents/CharacterCard';
 import { CharacterCardsContainer } from '../CharacterComponents/CharacterStyles';
-
 import { SearchFormSection, StyledForm, StyledInput } from './SearchFormStyles';
 
-export default function SearchForm({ listOfCharacters }) {
-  // console.log(listOfCharacters)
+const apiNamePrefix = '?name=';
+
+export default function SearchForm({ charactersAPI, listOfCharacters }) {
+  // console.log(charactersAPI)
   const [filteredList, setFilteredList] = useState([]);
   const [query, setQuery] = useState('');
 
   useEffect(() => {
-    const filteredCharacters = listOfCharacters.filter(character => 
-      character.name.toLowerCase().includes(query.toLowerCase())
-    );
-    setFilteredList(filteredCharacters);
+    axios
+      .get(`${charactersAPI}${apiNamePrefix}${query}`)
+      .then(response => {
+        console.log(response)
+        setFilteredList(response.data.results)
+      })
+      .catch(err => console.log(err))
+
+
+
+
+
+
+    // const filteredCharacters = listOfCharacters.filter(character => 
+    //   character.name.toLowerCase().includes(query.toLowerCase())
+    // );
+    // setFilteredList(filteredCharacters);
   }, [query])
 
   const handleInputChange = event => {

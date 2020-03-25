@@ -46,7 +46,12 @@ export default function CharacterList() {
         <p>Page {apiPageNumber} of 25</p>
         <StyledButton onClick={() => incrementApiPageNumber()}>Next Page</StyledButton>
       </ButtonContainer>
-      <SearchForm listOfCharacters={listOfCharacters} />
+      <SearchForm 
+        listOfCharacters={listOfCharacters} 
+        charactersAPI={charactersAPI} 
+        apiPagePrefix={apiPagePrefix}
+        apiPageNumber={apiPageNumber}
+      />
       <ButtonContainer>
         <StyledButton onClick={() => decrementApiPageNumber()}>Previous Page</StyledButton>
         <p>Page {apiPageNumber} of 25</p>
