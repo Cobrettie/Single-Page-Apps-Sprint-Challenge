@@ -84,6 +84,7 @@ export const CharacterCardsContainer = styled.div`
 export const ButtonContainer = styled.div`
   margin: 40px auto 0px;
   text-align: center;
+  width: 100%;
 `;
 
 export const StyledButton = styled.button`

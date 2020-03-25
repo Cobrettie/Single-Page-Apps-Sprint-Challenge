@@ -43,11 +43,13 @@ export default function CharacterList() {
     <div>
       <ButtonContainer>
         <StyledButton onClick={() => decrementApiPageNumber()}>Previous Page</StyledButton>
+        <p>Page {apiPageNumber} of 25</p>
         <StyledButton onClick={() => incrementApiPageNumber()}>Next Page</StyledButton>
       </ButtonContainer>
       <SearchForm listOfCharacters={listOfCharacters} />
       <ButtonContainer>
         <StyledButton onClick={() => decrementApiPageNumber()}>Previous Page</StyledButton>
+        <p>Page {apiPageNumber} of 25</p>
         <StyledButton onClick={() => incrementApiPageNumber()}>Next Page</StyledButton>
       </ButtonContainer>
     </div>
