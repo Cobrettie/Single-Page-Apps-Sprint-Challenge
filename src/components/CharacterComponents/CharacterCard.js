@@ -2,7 +2,7 @@ import React from 'react';
 import { SingleCard, SingleCardImg, ImgContainer } from './CharacterStyles';
 
 export default function CharacterCard({ character }) {
-  const { id, name, image, status, species, type, gender } = character;
+  const { id, name, image, status, species, type, gender, origin } = character;
   console.log(character);
   return (
     <SingleCard>
@@ -14,6 +14,7 @@ export default function CharacterCard({ character }) {
       <p>Species: {species}</p>
       {type === '' ? <p>Type: No type available</p> : <p>Type: {type}</p>}
       <p>Gender: {gender}</p>
+      <p>Origin: {origin.name}</p>
     </SingleCard>
   );
 }
