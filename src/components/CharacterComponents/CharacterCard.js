@@ -1,20 +1,27 @@
 import React from 'react';
-import { SingleCard, SingleCardImg, ImgContainer } from './CharacterStyles';
+import { SingleCard, CardHeader, SingleCardImg, ImgContainer, HeaderNameContainer, HeaderName, CardInfoContainer, CardInfoP } from './CharacterStyles';
 
 export default function CharacterCard({ character }) {
-  const { id, name, image, status, species, type, gender, origin } = character;
+  const { id, name, image, status, species, type, gender, origin, location } = character;
   console.log(character);
   return (
     <SingleCard>
-      <h2>{name}</h2>
-      <ImgContainer>
-        <SingleCardImg src={image}></SingleCardImg>
-      </ImgContainer>
-      <p>Status: {status}</p>
-      <p>Species: {species}</p>
-      {type === '' ? <p>Type: No type available</p> : <p>Type: {type}</p>}
-      <p>Gender: {gender}</p>
-      <p>Origin: {origin.name}</p>
+      <CardHeader>
+        <ImgContainer>
+          <SingleCardImg src={image}></SingleCardImg>
+        </ImgContainer>
+        <HeaderNameContainer>
+          <HeaderName>{name}</HeaderName>
+        </HeaderNameContainer>
+      </CardHeader>
+      <CardInfoContainer>
+        <CardInfoP>Status: <span>{status}</span></CardInfoP>
+        <CardInfoP>Species: <span>{species}</span></CardInfoP>
+        {type === '' ? <CardInfoP>Type: <span>No type available</span></CardInfoP> : <CardInfoP>Type: <span>{type}</span></CardInfoP>}
+        <CardInfoP>Gender: <span>{gender}</span></CardInfoP>
+        <CardInfoP>Origin: <span>{origin.name}</span></CardInfoP>
+        <CardInfoP>Last Location: <span>{location.name}</span></CardInfoP>
+      </CardInfoContainer>
     </SingleCard>
   );
 }
