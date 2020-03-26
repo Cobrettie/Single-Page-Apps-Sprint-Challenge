@@ -4,12 +4,9 @@ import CharacterCard from '../CharacterComponents/CharacterCard';
 import { CharacterCardsContainer } from '../CharacterComponents/CharacterStyles';
 import { SearchFormSection, StyledForm, StyledInput } from './SearchFormStyles';
 
-// const charactersAPI = 'https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/character/';
-// const apiPagePrefix = '?page=';
-
 const apiNamePrefix = '?name=';
 
-export default function SearchForm({ charactersAPI, listOfCharacters }) {
+export default function SearchForm({ charactersAPI }) {
   const [filteredList, setFilteredList] = useState([]);
   const [query, setQuery] = useState('');
 
@@ -39,7 +36,17 @@ export default function SearchForm({ charactersAPI, listOfCharacters }) {
         />
       </StyledForm>
 
-      <CharacterCardsContainer>
+      {query === '' ? null : 
+        <CharacterCardsContainer>
+          {console.log(filteredList)}
+          {filteredList.map(character => {
+            return (
+              <CharacterCard character={character} key={character.id} />
+            )
+          })}
+      </CharacterCardsContainer>}
+
+      {/* <CharacterCardsContainer>
         {console.log(filteredList)}
         {filteredList.map(character => {
           return (
@@ -47,10 +54,22 @@ export default function SearchForm({ charactersAPI, listOfCharacters }) {
           )
         }  
         )}
-      </CharacterCardsContainer>
+      </CharacterCardsContainer> */}
     </SearchFormSection>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
