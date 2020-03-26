@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import NavMenu from './components/NavMenu.js';
 import Header from './components/Header.js';
 import WelcomePage from './components/WelcomePage.js';
+import SearchForm from './components/SearchForm/SearchForm';
 import CharacterList from './components/CharacterComponents/CharacterList';
 
 export default function App() {
@@ -12,7 +13,7 @@ export default function App() {
       <Header />
 
       <Route exact path='/' component={WelcomePage} />
-      <Route path='/characterlist' component={CharacterList} />
+      <Route path='/characterlist' component={SearchForm} />
     </main>
   );
 }
