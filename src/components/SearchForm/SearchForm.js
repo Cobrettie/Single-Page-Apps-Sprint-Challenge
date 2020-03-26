@@ -4,7 +4,7 @@ import CharacterCard from '../CharacterComponents/CharacterCard';
 import { CharacterCardsContainer } from '../CharacterComponents/CharacterStyles';
 import { SearchFormSection, StyledForm, StyledInput } from './SearchFormStyles';
 
-const apiNamePrefix = '?name=';
+const apiNamePrefix = '&name=';
 const apiPagePrefix = '?page=';
 
 export default function SearchForm({ charactersAPI, apiPageNumber }) {
@@ -13,13 +13,13 @@ export default function SearchForm({ charactersAPI, apiPageNumber }) {
 
   useEffect(() => {
     axios
-      .get(`${charactersAPI}${apiNamePrefix}${query}`)
+      .get(`${charactersAPI}${apiPagePrefix}${apiPageNumber}${apiNamePrefix}${query}`)
       .then(response => {
         console.log(response)
         setFilteredList(response.data.results)
       })
       .catch(err => console.log(err))
-  }, [query])
+  }, [query, apiPageNumber])
 
   const handleInputChange = event => {
     setQuery(event.target.value)

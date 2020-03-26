@@ -10,6 +10,7 @@ const apiPagePrefix = '?page=';
 export default function CharacterList() {
   const [listOfCharacters, setListOfCharacters] = useState([]);
   const [apiPageNumber, setApiPageNumber] = useState(1);
+  const [totalPages, setTotalPages] = useState();
 
   const incrementApiPageNumber = () => {
     return (
@@ -30,6 +31,7 @@ export default function CharacterList() {
         // console.log(response)
         const allCharacters = response.data.results;
         setListOfCharacters(allCharacters)
+        setTotalPages(response.data.info.pages)
       })
       .catch(err => console.log(err))
   }, [apiPageNumber]);
@@ -42,13 +44,14 @@ export default function CharacterList() {
     <div>
       <ButtonContainer>
         <StyledButton onClick={() => decrementApiPageNumber()}>Previous Page</StyledButton>
-        <p>Page {apiPageNumber} of 25</p>
+        <p>Page {apiPageNumber} of {totalPages}</p>
         <StyledButton onClick={() => incrementApiPageNumber()}>Next Page</StyledButton>
       </ButtonContainer>
       <SearchForm 
         charactersAPI={charactersAPI} 
         apiPageNumber={apiPageNumber}
       />
+
 
       <section className="character-list">
         <CharacterCardsContainer>
@@ -57,9 +60,6 @@ export default function CharacterList() {
           ))}
         </CharacterCardsContainer>
       </section> 
-
-
-
 
       
       <ButtonContainer>
