@@ -38,6 +38,10 @@ export default function SearchForm() {
       .catch(err => console.log(err))
   }, [query, apiPageNumber])
 
+  if (apiPageNumber > availablePages || apiPageNumber < 1) {
+    setApiPageNumber(1)
+  }
+
   const handleInputChange = event => {
     setQuery(event.target.value)
   }
@@ -71,6 +75,12 @@ export default function SearchForm() {
             })}
           </CharacterCardsContainer>
       </SearchFormSection>
+
+      <ButtonContainer>
+        <StyledButton onClick={() => decrementApiPageNumber()}>Previous Page</StyledButton>
+        <p>Page {apiPageNumber} of {availablePages}</p>
+        <StyledButton onClick={() => incrementApiPageNumber()}>Next Page</StyledButton>
+      </ButtonContainer>
     </div>
   );
 }
