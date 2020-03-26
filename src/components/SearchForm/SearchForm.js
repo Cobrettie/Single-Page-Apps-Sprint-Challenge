@@ -39,16 +39,6 @@ export default function SearchForm({ charactersAPI, listOfCharacters }) {
         />
       </StyledForm>
 
-      {query === '' ? 
-      <section className="character-list">
-        <CharacterCardsContainer>
-          {listOfCharacters.map(character => (
-            <CharacterCard character={character} key={character.id} />
-          ))}
-        </CharacterCardsContainer>
-      </section> 
-      : null}
-
       <CharacterCardsContainer>
         {console.log(filteredList)}
         {filteredList.map(character => {
@@ -61,3 +51,16 @@ export default function SearchForm({ charactersAPI, listOfCharacters }) {
     </SearchFormSection>
   );
 }
+
+
+
+
+{/* {!query ? 
+      <section className="character-list">
+        <CharacterCardsContainer>
+          {listOfCharacters.map(character => (
+            <CharacterCard character={character} key={character.id} />
+          ))}
+        </CharacterCardsContainer>
+      </section> 
+      : null} */}
