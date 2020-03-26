@@ -25,7 +25,6 @@ export const ImgContainer = styled.div`
 
 export const SingleCardImg = styled.img`
   border-radius: 5px;
-  max-width: 100%;
   opacity: 1;
   margin: 0px;
   transition: opacity 0.5s ease 0s;
@@ -33,6 +32,7 @@ export const SingleCardImg = styled.img`
 
 export const HeaderNameContainer = styled.div`
   width: 100%;
+  max-width: 100%;
   opacity: 0.8;
   position: absolute;
   bottom: 0px;
@@ -47,6 +47,7 @@ export const HeaderName = styled.h2`
   font-weight: 400;
   font-stretch: expanded;
   margin: 0px;
+  max-width: 250px;
 `;
 
 export const CardInfoContainer = styled.div`
