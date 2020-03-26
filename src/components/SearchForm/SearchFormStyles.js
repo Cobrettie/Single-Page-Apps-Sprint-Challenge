@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const SearchFormSection = styled.section`
   text-align: center;
-  margin: 40px auto 30px;
+  margin: 40px auto 0;
 `;
 
 export const StyledForm = styled.form`

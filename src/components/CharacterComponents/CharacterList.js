@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import SearchForm from "../SearchForm/SearchForm";
-import { ButtonContainer, StyledButton } from "./CharacterStyles";
+import CharacterCard from './CharacterCard';
+import { CharacterCardsContainer, ButtonContainer, StyledButton } from "./CharacterStyles";
 
 const charactersAPI = 'https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/character/';
 const apiPagePrefix = '?page=';
@@ -45,9 +46,21 @@ export default function CharacterList() {
         <StyledButton onClick={() => incrementApiPageNumber()}>Next Page</StyledButton>
       </ButtonContainer>
       <SearchForm 
-        listOfCharacters={listOfCharacters} 
         charactersAPI={charactersAPI} 
+        apiPageNumber={apiPageNumber}
       />
+
+      <section className="character-list">
+        <CharacterCardsContainer>
+          {listOfCharacters.map(character => (
+            <CharacterCard character={character} key={character.id} />
+          ))}
+        </CharacterCardsContainer>
+      </section> 
+
+
+
+
       
       <ButtonContainer>
         <StyledButton onClick={() => decrementApiPageNumber()}>Previous Page</StyledButton>

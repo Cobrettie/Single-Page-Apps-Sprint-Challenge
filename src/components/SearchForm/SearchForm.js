@@ -5,8 +5,9 @@ import { CharacterCardsContainer } from '../CharacterComponents/CharacterStyles'
 import { SearchFormSection, StyledForm, StyledInput } from './SearchFormStyles';
 
 const apiNamePrefix = '?name=';
+const apiPagePrefix = '?page=';
 
-export default function SearchForm({ charactersAPI }) {
+export default function SearchForm({ charactersAPI, apiPageNumber }) {
   const [filteredList, setFilteredList] = useState([]);
   const [query, setQuery] = useState('');
 
@@ -48,28 +49,3 @@ export default function SearchForm({ charactersAPI }) {
     </SearchFormSection>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{/* {!query ? 
-      <section className="character-list">
-        <CharacterCardsContainer>
-          {listOfCharacters.map(character => (
-            <CharacterCard character={character} key={character.id} />
-          ))}
-        </CharacterCardsContainer>
-      </section> 
-      : null} */}
