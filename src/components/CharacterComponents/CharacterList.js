@@ -48,6 +48,7 @@ export default function CharacterList() {
         listOfCharacters={listOfCharacters} 
         charactersAPI={charactersAPI} 
       />
+      
       <ButtonContainer>
         <StyledButton onClick={() => decrementApiPageNumber()}>Previous Page</StyledButton>
         <p>Page {apiPageNumber} of 25</p>

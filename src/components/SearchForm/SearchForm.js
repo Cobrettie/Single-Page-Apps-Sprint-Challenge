@@ -44,17 +44,7 @@ export default function SearchForm({ charactersAPI }) {
               <CharacterCard character={character} key={character.id} />
             )
           })}
-      </CharacterCardsContainer>}
-
-      {/* <CharacterCardsContainer>
-        {console.log(filteredList)}
-        {filteredList.map(character => {
-          return (
-            <CharacterCard character={character} key={character.id} />
-          )
-        }  
-        )}
-      </CharacterCardsContainer> */}
+        </CharacterCardsContainer>}
     </SearchFormSection>
   );
 }
