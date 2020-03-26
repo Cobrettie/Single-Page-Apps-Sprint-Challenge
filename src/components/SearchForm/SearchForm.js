@@ -15,7 +15,6 @@ export default function SearchForm() {
   const [apiPageNumber, setApiPageNumber] = useState(1);
   const [availablePages, setAvailablePages] = useState();
 
-
   const incrementApiPageNumber = () => {
     return (
       setApiPageNumber(apiPageNumber + 1)
@@ -27,10 +26,6 @@ export default function SearchForm() {
       setApiPageNumber(apiPageNumber - 1)
     )
   }
-
-
-
-
 
   useEffect(() => {
     axios
