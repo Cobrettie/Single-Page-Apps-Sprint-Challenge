@@ -4,10 +4,12 @@ import CharacterCard from '../CharacterComponents/CharacterCard';
 import { CharacterCardsContainer } from '../CharacterComponents/CharacterStyles';
 import { SearchFormSection, StyledForm, StyledInput } from './SearchFormStyles';
 
+// const charactersAPI = 'https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/character/';
+// const apiPagePrefix = '?page=';
+
 const apiNamePrefix = '?name=';
 
 export default function SearchForm({ charactersAPI, listOfCharacters }) {
-  // console.log(charactersAPI)
   const [filteredList, setFilteredList] = useState([]);
   const [query, setQuery] = useState('');
 
@@ -19,16 +21,6 @@ export default function SearchForm({ charactersAPI, listOfCharacters }) {
         setFilteredList(response.data.results)
       })
       .catch(err => console.log(err))
-
-
-
-
-
-
-    // const filteredCharacters = listOfCharacters.filter(character => 
-    //   character.name.toLowerCase().includes(query.toLowerCase())
-    // );
-    // setFilteredList(filteredCharacters);
   }, [query])
 
   const handleInputChange = event => {
@@ -47,7 +39,7 @@ export default function SearchForm({ charactersAPI, listOfCharacters }) {
         />
       </StyledForm>
 
-      {filteredList.length === 0 ? 
+      {query === '' ? 
       <section className="character-list">
         <CharacterCardsContainer>
           {listOfCharacters.map(character => (
@@ -58,6 +50,7 @@ export default function SearchForm({ charactersAPI, listOfCharacters }) {
       : null}
 
       <CharacterCardsContainer>
+        {console.log(filteredList)}
         {filteredList.map(character => {
           return (
             <CharacterCard character={character} key={character.id} />

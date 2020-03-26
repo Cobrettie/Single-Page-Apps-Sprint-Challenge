@@ -29,15 +29,13 @@ export default function CharacterList() {
         // console.log(response)
         const allCharacters = response.data.results;
         setListOfCharacters(allCharacters)
-        if (response.data.info.next === '') {
-          setApiPageNumber(1)
-        }
-        if (response.data.info.prev === '') {
-          setApiPageNumber(1)
-        }
       })
       .catch(err => console.log(err))
   }, [apiPageNumber]);
+
+  if (apiPageNumber > 25 || apiPageNumber < 1) {
+    setApiPageNumber(1)
+  }
 
   return (
     <div>
@@ -49,8 +47,6 @@ export default function CharacterList() {
       <SearchForm 
         listOfCharacters={listOfCharacters} 
         charactersAPI={charactersAPI} 
-        apiPagePrefix={apiPagePrefix}
-        apiPageNumber={apiPageNumber}
       />
       <ButtonContainer>
         <StyledButton onClick={() => decrementApiPageNumber()}>Previous Page</StyledButton>

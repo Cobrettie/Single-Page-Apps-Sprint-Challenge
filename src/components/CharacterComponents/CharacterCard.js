@@ -3,7 +3,7 @@ import { SingleCard, CardHeader, SingleCardImg, ImgContainer, HeaderNameContaine
 
 export default function CharacterCard({ character }) {
   const { id, name, image, status, species, type, gender, origin, location } = character;
-  console.log(character);
+  // console.log(character);
   return (
     <SingleCard>
       <CardHeader>
