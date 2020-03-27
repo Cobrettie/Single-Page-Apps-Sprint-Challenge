@@ -66,7 +66,7 @@ export const CardInfoP = styled.p`
   padding: 0.75rem 0px 0.375rem;
 
   span {
-    color: dodgerblue;
+    color: #ABD5EC;
     text-align: right;
   }
 `;
@@ -90,9 +90,10 @@ export const ButtonContainer = styled.div`
 
 export const StyledButton = styled.button`
   font-size: 14px;
-  background-color: dodgerblue;
-  color: #fafafa;
-  border: 1px solid #373737;
+  background-color: #ABD5EC;
+  color: #333333;
+  border: 1px solid #333333;
   border-radius: 5px;
   margin: 0 10px;
+  cursor: pointer;
 `;

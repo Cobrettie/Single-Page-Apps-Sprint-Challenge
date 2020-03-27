@@ -39,6 +39,10 @@ header h1 {
 
 /* WelcomePage Component */
 
+.welcome-page header h1 {
+  color: #333333;
+}
+
 .welcomePageImgContainer {
   width: 100%;
   text-align: center;
