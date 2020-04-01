@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../Breakpoints';
 
 export const SearchFormSection = styled.section`
   text-align: center;
@@ -17,4 +18,12 @@ export const StyledInput = styled.input`
   font-size: 20px;
   border: 2px solid #373737;
   border-radius: 5px;
+
+  @media ${device.ancient} {
+    font-size: 12px;
+  }
+
+  @media ${device.mobileS} {
+    font-size: 20px;
+  }
 `;
