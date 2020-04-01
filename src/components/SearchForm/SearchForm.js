@@ -27,6 +27,10 @@ export default function SearchForm() {
     )
   }
 
+  const handleInputChange = event => {
+    setQuery(event.target.value)
+  }
+
   useEffect(() => {
     axios
       .get(`${charactersAPI}${apiPagePrefix}${apiPageNumber}${apiNamePrefix}${query}`)
@@ -40,10 +44,6 @@ export default function SearchForm() {
 
   if (apiPageNumber > availablePages || apiPageNumber < 1) {
     setApiPageNumber(1)
-  }
-
-  const handleInputChange = event => {
-    setQuery(event.target.value)
   }
 
   return (
