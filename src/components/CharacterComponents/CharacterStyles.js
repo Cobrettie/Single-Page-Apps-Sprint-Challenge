@@ -95,9 +95,20 @@ export const CharacterCardsContainer = styled.div`
 // CharacterList component buttons
 
 export const ButtonContainer = styled.div`
+  display: flex;
+  max-width: 500px;
   margin: 40px auto 0px;
   text-align: center;
   width: 100%;
+
+  @media ${device.ancient} {
+    flex-direction: column;
+  }
+
+  @media ${device.mobileL} {
+    flex-direction: row;
+    align-items: center;
+  }
 `;
 
 export const StyledButton = styled.button`
@@ -108,4 +119,15 @@ export const StyledButton = styled.button`
   border-radius: 5px;
   margin: 0 10px;
   cursor: pointer;
+
+  @media ${device.ancient} {
+    // width: 60%;
+    font-size: 16px;
+    padding: 10px 30px;
+    margin: 20px auto;
+  }
+
+  @media ${device.mobileL} {
+    font-size: 14px;
+  }
 `;
