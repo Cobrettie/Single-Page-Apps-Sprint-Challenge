@@ -51,6 +51,7 @@ export default function NavMenu() {
     <StyledNav>
       <StyledNavLink to='/'>Home</StyledNavLink>
       <StyledNavLink to='/characterlist'>Characters</StyledNavLink>
+      <StyledNavLink to ='/episodelist'>Episodes</StyledNavLink>
     </StyledNav>
   )
 }
