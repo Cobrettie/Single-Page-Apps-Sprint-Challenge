@@ -5,22 +5,25 @@ import { device } from '../Breakpoints';
  
 const StyledNav = styled.nav`
   border-bottom: 2px solid #373737;
-  padding: 20px 0;
+  padding: 20px 0 30px;
   margin: 0 auto 40px;
   text-align: right;
 
   @media ${device.ancient} {
     display: flex;
     flex-direction: column;
+    padding: 20px 0;
   }
 
   @media ${device.mobileL} {
     display: block;
     text-align: center;
+    padding: 20px 0 30px;
   }
 
   @media ${device.tablet} {
     text-align: right;
+    padding: 20px 0 30px;
   }
 `;
 
