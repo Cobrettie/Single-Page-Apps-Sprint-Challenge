@@ -4,7 +4,7 @@ import NavMenu from './components/NavMenu.js';
 import Header from './components/Header.js';
 import WelcomePage from './components/WelcomePage.js';
 import SearchForm from './components/SearchForm/SearchForm';
-import EpisodeList from './components/EpisodeComponents/Episode';
+import EpisodeList from './components/EpisodeComponents/EpisodeList';
 
 export default function App() {
   return (
