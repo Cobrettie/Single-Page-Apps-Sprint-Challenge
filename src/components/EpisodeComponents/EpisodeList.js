@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import EpisodeCard from './EpisodeCard';
+import { EpisodeCardsContainer } from './EpisodeStyles';
 
 const EpisodeListAPI = 'https://rickandmortyapi.com/api/episode/';
 
@@ -21,11 +22,13 @@ export default function EpisodeList() {
   return (
     <div>
       <h2>Episode List</h2>
-      {listOfEpisodes.map(episode => {
-        return (
-          <EpisodeCard episodes={episode} key={episode.id} />
-        )
-      })}
+      <EpisodeCardsContainer>
+        {listOfEpisodes.map(episode => {
+          return (
+            <EpisodeCard episodes={episode} key={episode.id} />
+          )
+        })}
+      </EpisodeCardsContainer>
     </div>
   )
 }
