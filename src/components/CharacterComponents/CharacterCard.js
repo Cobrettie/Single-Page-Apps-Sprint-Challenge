@@ -2,7 +2,7 @@ import React from 'react';
 import { SingleCard, CardHeader, SingleCardImg, ImgContainer, HeaderNameContainer, HeaderName, CardInfoContainer, CardInfoP } from './CharacterStyles';
 
 export default function CharacterCard({ character }) {
-  const { id, name, image, status, species, type, gender, origin, location } = character;
+  const { name, image, status, species, type, gender, origin, location } = character;
   // console.log(character);
   return (
     <SingleCard>

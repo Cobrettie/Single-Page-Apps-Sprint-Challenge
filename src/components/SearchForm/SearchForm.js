@@ -31,7 +31,7 @@ export default function SearchForm() {
     axios
       .get(`${charactersAPI}${apiPagePrefix}${apiPageNumber}${apiNamePrefix}${query}`)
       .then(response => {
-        console.log(response)
+        // console.log(response)
         setFilteredList(response.data.results)
         setAvailablePages(response.data.info.pages)
       })
@@ -65,15 +65,14 @@ export default function SearchForm() {
           />
         </StyledForm>
 
-        {/* {query === '' ? null :  */}
-          <CharacterCardsContainer>
-            {console.log(filteredList)}
-            {filteredList.map(character => {
-              return (
-                <CharacterCard character={character} key={character.id} />
-              )
-            })}
-          </CharacterCardsContainer>
+        <CharacterCardsContainer>
+          {/* {console.log(filteredList)} */}
+          {filteredList.map(character => {
+            return (
+              <CharacterCard character={character} key={character.id} />
+            )
+          })}
+        </CharacterCardsContainer>
       </SearchFormSection>
 
       <ButtonContainer>

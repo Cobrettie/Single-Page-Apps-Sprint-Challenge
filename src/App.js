@@ -4,7 +4,6 @@ import NavMenu from './components/NavMenu.js';
 import Header from './components/Header.js';
 import WelcomePage from './components/WelcomePage.js';
 import SearchForm from './components/SearchForm/SearchForm';
-import CharacterList from './components/CharacterComponents/CharacterList';
 
 export default function App() {
   return (
