@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { device } from '../../Breakpoints';
 
 // CharacterCard component 
 
@@ -10,6 +10,10 @@ export const SingleCard = styled.div`
   max-width: 300px;
   overflow: hidden;
   margin: 20px;
+
+  @media ${device.mobileS} {
+    width: 80%;
+  }
 `;
 
 export const CardHeader = styled.div`
