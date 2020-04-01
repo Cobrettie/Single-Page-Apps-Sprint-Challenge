@@ -1,13 +1,23 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-
+import { device } from '../Breakpoints';
+ 
 const StyledNav = styled.nav`
   border-bottom: 2px solid #373737;
   padding: 20px 0;
   margin: 0 auto 40px;
-  // background: #333333;
   text-align: right;
+
+  @media ${device.ancient} {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media ${device.mobileL} {
+    display: block;
+    text-align: center;
+  }
 `;
 
 const StyledNavLink = styled(NavLink)`
@@ -19,6 +29,14 @@ const StyledNavLink = styled(NavLink)`
   padding: 5px 20px;
   font-size: 22px;
   margin: 0 20px;
+
+  @media ${device.ancient} {
+    margin: 10px auto;
+  }
+
+  @media ${device.mobileL} {
+    margin: 0 20px;
+  }
 `;
 
 export default function NavMenu() {
