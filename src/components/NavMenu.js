@@ -18,6 +18,10 @@ const StyledNav = styled.nav`
     display: block;
     text-align: center;
   }
+
+  @media ${device.tablet} {
+    text-align: right;
+  }
 `;
 
 const StyledNavLink = styled(NavLink)`
