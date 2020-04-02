@@ -15,6 +15,7 @@ export default function App() {
       <Route exact path='/' component={WelcomePage} />
       <Route path='/characterlist' component={SearchForm} />
       <Route path='/episodelist' component={EpisodeList} />
+      <Route path='/episodecharacters' component={EpisodeCharactersList} />
     </main>
   );
 }
