@@ -92,7 +92,7 @@ export const CharacterCardsContainer = styled.div`
   justify-content: center;
 `;
 
-// CharacterList component buttons
+// component buttons
 
 export const ButtonContainer = styled.div`
   display: flex;

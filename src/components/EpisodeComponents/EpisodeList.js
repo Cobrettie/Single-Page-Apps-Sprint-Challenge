@@ -5,7 +5,7 @@ import { EpisodeCardsContainer } from './EpisodeStyles';
 
 const EpisodeListAPI = 'https://rickandmortyapi.com/api/episode/';
 
-export default function EpisodeList() {
+export default function EpisodeList(props) {
   const [listOfEpisodes, setListOfEpisodes] = useState([]);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ export default function EpisodeList() {
       <EpisodeCardsContainer>
         {listOfEpisodes.map(episode => {
           return (
-            <EpisodeCard episodes={episode} key={episode.id} />
+            <EpisodeCard props={props} episodes={episode} key={episode.id} />
           )
         })}
       </EpisodeCardsContainer>
