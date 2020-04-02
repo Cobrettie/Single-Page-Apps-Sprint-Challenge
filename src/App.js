@@ -12,6 +12,7 @@ export default function App() {
     <main data-testid='app'>
       <NavMenu />
       <Header />
+      
       <Switch>
         <Route exact path='/' component={WelcomePage} />
         <Route exact path='/characterlist' component={SearchForm} />

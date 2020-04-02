@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Route } from 'react-router-dom';
 import axios from 'axios';
 import EpisodeCard from './EpisodeCard';
 import { EpisodeCardsContainer } from './EpisodeStyles';
-
-import EpisodeCharactersList from './EpisodeCharactersList';
-
 
 const EpisodeListAPI = 'https://rickandmortyapi.com/api/episode/';
 
@@ -33,12 +29,6 @@ export default function EpisodeList(props) {
           )
         })}
       </EpisodeCardsContainer>
-
-      {/* <Route 
-        path='/episode/:id/characters' 
-        // component={EpisodeCharactersList} 
-        render={() => <EpisodeCharactersList listOfEpisodes={listOfEpisodes} />}
-      /> */}
     </div>
   )
 }
