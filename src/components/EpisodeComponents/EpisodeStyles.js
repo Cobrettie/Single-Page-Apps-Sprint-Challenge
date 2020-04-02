@@ -36,6 +36,7 @@ export const HeaderNameH2 = styled.h2`
 export const InfoContainerDiv = styled.div`
   background: rgb(51, 51, 51);
   padding: 1.25rem;
+  height: 100%;
 `;
 
 export const CardInfoP = styled.p`

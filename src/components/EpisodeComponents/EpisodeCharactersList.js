@@ -5,6 +5,7 @@ import CharacterCard from '../CharacterComponents/CharacterCard';
 export default function EpisodeCharactersList(props) {
   console.log(props);
   const [episodeCharacters, setEpisodeCharacters] = useState([]);
+  const [test, setTest] = useState([]);
 
   useEffect(() => {
     axios
@@ -12,20 +13,28 @@ export default function EpisodeCharactersList(props) {
       .then(response => {
         console.log(response)
         const allCharacters = response.data.characters
-        setEpisodeCharacters(allCharacters);
+        setEpisodeCharacters(allCharacters)
       })
       .catch(err => console.log(err))
   }, [])
 
+  useEffect(() => {
+    episodeCharacters.map(character => {
+      axios
+        .get(`${character}`)
+        .then(response => {
+          console.log(response)
+          test.push(response.data.name)
+        })
+        .catch(err => console.log(err))
+    })
+  }, [episodeCharacters])
+
+  console.log(test)
+
   return (
     <div>
       <h2>Episode Characters List</h2>
-      {episodeCharacters.map(character => {
-        return (
-          // <CharacterCard character={character} key={character.id} />
-          console.log(character)
-        )
-      })}
     </div>
   )
 }
