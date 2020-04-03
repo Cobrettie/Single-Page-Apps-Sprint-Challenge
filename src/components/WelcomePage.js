@@ -4,7 +4,7 @@ export default function WelcomePage() {
   return (
     <section className="welcome-page">
       <header>
-        <h1>Welcome to the ultimate fan site!</h1>
+        {/* <h1>Welcome to a Rick &amp; Morty fan page</h1> */}
         <div className='welcomePageImgContainer'>
           <img
             className="main-img"
