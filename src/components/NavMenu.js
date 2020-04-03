@@ -16,14 +16,14 @@ const StyledNav = styled.nav`
   }
 
   @media ${device.mobileL} {
-    display: block;
     text-align: center;
     padding: 20px 0 30px;
   }
 
   @media ${device.tablet} {
+    display: block;
     text-align: right;
-    padding: 20px 0 30px;
+    padding: 30px 0 30px;
   }
 `;
 
@@ -42,7 +42,12 @@ const StyledNavLink = styled(NavLink)`
   }
 
   @media ${device.mobileL} {
-    margin: 0 20px;
+    margin: 10px auto;
+    width: 40%;
+  }
+
+  @media ${device.tablet} {
+    margin: 10px 20px;
   }
 `;
 

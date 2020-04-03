@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../Breakpoints';
 
 export const EpisodeCardsContainer = styled.div`
   display: flex;
@@ -14,6 +15,18 @@ export const SingleCard = styled.div`
   max-width: 300px;
   overflow: hidden;
   margin: 20px;
+
+  @media ${device.ancient} {
+    width: 80%;
+  }
+
+  @media ${device.tablet} {
+    width: 35%;
+  }
+
+  @media ${device.laptop} {
+    width: 25%;
+  }
 `;
 
 export const HeaderNameContainer = styled.div`
