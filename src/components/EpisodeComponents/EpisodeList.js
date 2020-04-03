@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import EpisodeCard from './EpisodeCard';
 import { EpisodeCardsContainer } from './EpisodeStyles';
+import { ButtonContainer, StyledButton } from '../CharacterComponents/CharacterStyles';
 
 const EpisodeListAPI = 'https://rickandmortyapi.com/api/episode/';
 const apiPagePrefix = '?page=';
@@ -9,6 +10,7 @@ const apiPagePrefix = '?page=';
 export default function EpisodeList(props) {
   const [listOfEpisodes, setListOfEpisodes] = useState([]);
   const [apiPageNumber, setApiPageNumber] = useState(1);
+  const [availablePages, setAvailablePages] = useState();
 
   const incrementApiPageNumber = () => {
     return (
@@ -29,13 +31,24 @@ export default function EpisodeList(props) {
         console.log(response)
         const allEpisodes = response.data.results
         setListOfEpisodes(allEpisodes)
+        setAvailablePages(response.data.info.pages)
       })
       .catch(err => console.log(err))
-  }, [])
+  }, [apiPageNumber])
+
+  if (apiPageNumber > availablePages || apiPageNumber < 1) {
+    setApiPageNumber(1)
+  }
 
   return (
     <div>
       <h2>Episode List</h2>
+      <ButtonContainer>
+        <StyledButton onClick={() => decrementApiPageNumber()}>Previous Page</StyledButton>
+        <p>Page {apiPageNumber} of {availablePages}</p>
+        <StyledButton onClick={() => incrementApiPageNumber()}>Next Page</StyledButton>
+      </ButtonContainer>
+
       <EpisodeCardsContainer>
         {listOfEpisodes.map(episode => {
           return (
@@ -47,6 +60,12 @@ export default function EpisodeList(props) {
           )
         })}
       </EpisodeCardsContainer>
+
+      <ButtonContainer>
+        <StyledButton onClick={() => decrementApiPageNumber()}>Previous Page</StyledButton>
+        <p>Page {apiPageNumber} of {availablePages}</p>
+        <StyledButton onClick={() => incrementApiPageNumber()}>Next Page</StyledButton>
+      </ButtonContainer>
     </div>
   )
 }
