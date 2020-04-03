@@ -29,7 +29,6 @@ export default function EpisodeList(props) {
     axios
       .get(`${EpisodeListAPI}${apiPagePrefix}${apiPageNumber}`)
       .then(response => {
-        console.log(response)
         const allEpisodes = response.data.results
         setListOfEpisodes(allEpisodes)
         setAvailablePages(response.data.info.pages)
