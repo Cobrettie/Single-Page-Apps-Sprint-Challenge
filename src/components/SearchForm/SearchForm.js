@@ -38,7 +38,7 @@ export default function SearchForm() {
       .then(response => {
         setFilteredList(response.data.results)
         setAvailablePages(response.data.info.pages)
-        setTimeout(() => setLoading(false), 1000)
+        setTimeout(() => setLoading(false), 700)
       })
       .catch(err => console.log(err))
   }, [query, apiPageNumber])

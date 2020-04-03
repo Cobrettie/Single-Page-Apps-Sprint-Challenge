@@ -32,7 +32,7 @@ export default function EpisodeList(props) {
         const allEpisodes = response.data.results
         setListOfEpisodes(allEpisodes)
         setAvailablePages(response.data.info.pages)
-        setTimeout(() => setLoading(false), 1000)
+        setTimeout(() => setLoading(false), 700)
       })
       .catch(err => console.log(err))
   }, [apiPageNumber])
