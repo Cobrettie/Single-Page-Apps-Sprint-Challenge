@@ -11,6 +11,7 @@ const apiPagePrefix = '?page=';
 export default function SearchForm() {
   const [filteredList, setFilteredList] = useState([]);
   const [query, setQuery] = useState('');
+  const [loading, setLoading] = useState(true);
 
   const [apiPageNumber, setApiPageNumber] = useState(1);
   const [availablePages, setAvailablePages] = useState();
@@ -38,12 +39,17 @@ export default function SearchForm() {
         // console.log(response)
         setFilteredList(response.data.results)
         setAvailablePages(response.data.info.pages)
+        setTimeout(() => setLoading(false), 1000)
       })
       .catch(err => console.log(err))
   }, [query, apiPageNumber])
 
   if (apiPageNumber > availablePages || apiPageNumber < 1) {
     setApiPageNumber(1)
+  }
+
+  if (loading === true) {
+    return <h2>Loading characters...</h2>
   }
 
   return (

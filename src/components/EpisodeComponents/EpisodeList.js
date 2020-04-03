@@ -11,6 +11,7 @@ export default function EpisodeList(props) {
   const [listOfEpisodes, setListOfEpisodes] = useState([]);
   const [apiPageNumber, setApiPageNumber] = useState(1);
   const [availablePages, setAvailablePages] = useState();
+  const [loading, setLoading] = useState(true);
 
   const incrementApiPageNumber = () => {
     return (
@@ -32,6 +33,7 @@ export default function EpisodeList(props) {
         const allEpisodes = response.data.results
         setListOfEpisodes(allEpisodes)
         setAvailablePages(response.data.info.pages)
+        setTimeout(() => setLoading(false), 1000)
       })
       .catch(err => console.log(err))
   }, [apiPageNumber])
@@ -40,9 +42,12 @@ export default function EpisodeList(props) {
     setApiPageNumber(1)
   }
 
+  if (loading === true) {
+    return <h2>Loading episodes...</h2>
+  }
+
   return (
     <div>
-      <h2>Episode List</h2>
       <ButtonContainer>
         <StyledButton onClick={() => decrementApiPageNumber()}>Previous Page</StyledButton>
         <p>Page {apiPageNumber} of {availablePages}</p>
