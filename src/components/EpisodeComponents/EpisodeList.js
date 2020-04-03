@@ -4,13 +4,27 @@ import EpisodeCard from './EpisodeCard';
 import { EpisodeCardsContainer } from './EpisodeStyles';
 
 const EpisodeListAPI = 'https://rickandmortyapi.com/api/episode/';
+const apiPagePrefix = '?page=';
 
 export default function EpisodeList(props) {
   const [listOfEpisodes, setListOfEpisodes] = useState([]);
+  const [apiPageNumber, setApiPageNumber] = useState(1);
+
+  const incrementApiPageNumber = () => {
+    return (
+      setApiPageNumber(apiPageNumber + 1)
+    )
+  }
+
+  const decrementApiPageNumber = () => {
+    return (
+      setApiPageNumber(apiPageNumber - 1)
+    )
+  }
 
   useEffect(() => {
     axios
-      .get(`${EpisodeListAPI}`)
+      .get(`${EpisodeListAPI}${apiPagePrefix}${apiPageNumber}`)
       .then(response => {
         console.log(response)
         const allEpisodes = response.data.results
@@ -25,7 +39,11 @@ export default function EpisodeList(props) {
       <EpisodeCardsContainer>
         {listOfEpisodes.map(episode => {
           return (
-            <EpisodeCard props={props} episodes={episode} key={episode.id} />
+            <EpisodeCard 
+              props={props} 
+              episodes={episode} 
+              key={episode.id} 
+            />
           )
         })}
       </EpisodeCardsContainer>

@@ -1,40 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import CharacterCard from '../CharacterComponents/CharacterCard';
+// import React, { useState, useEffect } from 'react';
+// import axios from 'axios';
 
-export default function EpisodeCharactersList(props) {
-  console.log(props);
-  const [episodeCharacters, setEpisodeCharacters] = useState([]);
-  const [test, setTest] = useState([]);
+// export default function EpisodeCharactersList(props) {
+//   console.log(props);
+//   const [episodeCharacters, setEpisodeCharacters] = useState([]);
 
-  useEffect(() => {
-    axios
-      .get(`https://rickandmortyapi.com/api/episode/${props.match.params.id}`)
-      .then(response => {
-        console.log(response)
-        const allCharacters = response.data.characters
-        setEpisodeCharacters(allCharacters)
-      })
-      .catch(err => console.log(err))
-  }, [])
+//   useEffect(() => {
+//     axios
+//       .get(`https://rickandmortyapi.com/api/episode/${props.match.params.id}`)
+//       .then(response => {
+//         console.log(response)
+//         const allCharacters = response.data.characters
+//         setEpisodeCharacters(allCharacters)
+//         return allCharacters
+//       })
+//       .catch(err => console.log(err))
+//   }, [])
 
-  useEffect(() => {
-    episodeCharacters.map(character => {
-      axios
-        .get(`${character}`)
-        .then(response => {
-          console.log(response)
-          test.push(response.data.name)
-        })
-        .catch(err => console.log(err))
-    })
-  }, [episodeCharacters])
-
-  console.log(test)
-
-  return (
-    <div>
-      <h2>Episode Characters List</h2>
-    </div>
-  )
-}
+//   return (
+//   console.log('episodeCharacters line 23', episodeCharacters),
+//     <div>
+//       <h2>Episode Characters List</h2>
+//     </div>
+//   )
+// }
