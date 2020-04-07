@@ -32,7 +32,7 @@ const StyledNavLink = styled(NavLink)`
   color: #333333;
   background: #ABD5EC;
   border: 1px solid #333333;
-  border-radius: 50px;
+  border-radius: 5px;
   padding: 5px 20px;
   font-size: 22px;
   margin: 0 20px;
